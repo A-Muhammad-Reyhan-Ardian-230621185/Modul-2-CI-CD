@@ -3,6 +3,7 @@ plugins {
     jacoco
     id("org.springframework.boot") version "4.0.3"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.sonarqube") version "7.1.0.6387"
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -44,6 +45,13 @@ dependencies {
     testImplementation("io.github.bonigarcia:selenium-jupiter:$seleniumJupiterVersion")
     testImplementation("io.github.bonigarcia:webdrivermanager:$webdriverManagerVersion")
     testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "A-Muhammad-Reyhan-Ardian-230621185_Modul-2-CI-CD")
+        property("sonar.organization", "a-muhammad-reyhan-ardian-230621185")
+    }
 }
 
 tasks.register<Test>("unitTest") {
