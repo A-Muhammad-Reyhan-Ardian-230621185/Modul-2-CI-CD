@@ -18,4 +18,4 @@ jobs:
           api_token: ${{ secrets.KOYEB_API_TOKEN }}
 
       - name: Redeploy Service with commit SHA
-        run: koyeb service redeploy modul-2-ci-cd --git-sha ${{ github.sha }}
+        run: koyeb service redeploy modul-2-ci-cd ${{ github.sha }}
