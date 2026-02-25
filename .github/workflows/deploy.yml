@@ -1,0 +1,21 @@
+name: Deploy to Koyeb
+
+on:
+  push:
+    branches:
+      - main  # Change this if your default branch is different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Koyeb CLI
+        uses: koyeb-community/koyeb-actions@v2
+        with:
+          api_token: ${{ fo6zftwteuwsgx14lfue18r25ix21w6mrgs2i20dqkkb53oik5oi8cimrpfyw9gt }}
+
+      - name: Redeploy Service
+        run: koyeb service redeploy modul-2-ci-cd
