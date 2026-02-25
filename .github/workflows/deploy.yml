@@ -3,19 +3,19 @@ name: Deploy to Koyeb
 on:
   push:
     branches:
-      - main  # Change this if your default branch is different
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
 
       - name: Install Koyeb CLI
-        uses: koyeb-community/koyeb-actions@v2
+        uses: koyeb-community/koyeb-actions@969e180512fa08ddac5231e2f78c8fb025fd5db7
         with:
-          api_token: ${{ fo6zftwteuwsgx14lfue18r25ix21w6mrgs2i20dqkkb53oik5oi8cimrpfyw9gt }}
+          api_token: ${{ secrets.KOYEB_API_TOKEN }}
 
-      - name: Redeploy Service
-        run: koyeb service redeploy modul-2-ci-cd
+      - name: Redeploy Service with commit SHA
+        run: koyeb service redeploy modul-2-ci-cd --git-sha ${{ github.sha }}
