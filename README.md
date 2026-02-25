@@ -12,4 +12,4 @@ Beberapa masalah yang saya perbaiki selama exercise ini:
 
 Ya, menurut saya implementasi saat ini sudah memenuhi definisi CI/CD. **CI** tercapai karena setiap push otomatis memicu workflow `ci.yml` yang melakukan unit test, build dengan gradle dan analisis kode dengan sonarcloud. **CD** tercapai karena workflow `deploy.yml` secara otomatis melakukan deploy ke koyeb. Kedua workflow ini membentuk pipeline CI/CD yang lengkap: kode otomatis diuji dan dianalisis, lalu langsung di-deploy
 
-Koyeb: global-lora-reyhanardian16-7a9b5720.koyeb.app/
+[Koyeb](global-lora-reyhanardian16-7a9b5720.koyeb.app/)
