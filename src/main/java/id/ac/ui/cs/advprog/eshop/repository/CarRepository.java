@@ -9,8 +9,7 @@ import java.util.UUID;
 
 @Repository
 public class CarRepository {
-    static int id = 0;
-    private List<Car> carData = new ArrayList<>();
+    final private List<Car> carData = new ArrayList<>();
 
     public Car create(Car car) {
         if (car.getCarId() == null) {
